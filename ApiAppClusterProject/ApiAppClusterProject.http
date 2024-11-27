@@ -1,0 +1,6 @@
+@ApiAppClusterProject_HostAddress = http://localhost:5236
+
+GET {{ApiAppClusterProject_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
