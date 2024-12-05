@@ -25,9 +25,11 @@ jobs:
       run: |
         docker build . \
           --file ./ApiAppClusterProject/Dockerfile \
-          --tag ${{ steps.login-ecr.outputs.registry }}/clusterproject/cluster-project-registry:api
-          
+          --tag ${{ steps.login-ecr.outputs.registry }}/${{ secrets.AWS_ECR_NAME }}:api
+
     - name: Push to amazon ECR
-      run: docker push ${{ steps.login-ecr.outputs.registry }}/clusterproject/cluster-project-registry:api
+      run: docker push ${{ steps.login-ecr.outputs.registry }}/${{ secrets.AWS_ECR_NAME }}:api
+
+      
 
   
